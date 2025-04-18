@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Apr 2025 pada 09.50
+-- Waktu pembuatan: 18 Apr 2025 pada 15.14
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `contactus` (
 --
 
 INSERT INTO `contactus` (`id`, `nama`, `email`, `perihal`, `pesan`) VALUES
-(1, 'Gading', 'jadja@gmail.com', 'saran', 'dbahsdajvdajd');
+(2, 'arya', 'aryaa@gmail.com', 'Pertanyaan seputar produk', 'Itu kok duriannya gak kaya durian?');
 
 -- --------------------------------------------------------
 
@@ -64,46 +64,59 @@ INSERT INTO `login` (`id`, `nama`, `username`, `password`, `level`) VALUES
 (1, 'Bima', 'bimadwi', 'ganteng', 'superadmin'),
 (2, 'gading', 'gading', 'ganteng', 'admin'),
 (3, 'arya', 'arya', 'ganteng', 'user'),
-(4, 'rapolo', 'rapolo', 'ganteng', 'admin');
+(4, 'rapolo', 'rapolo', 'ganteng', 'admin'),
+(5, 'nova', 'nova', 'ganteng', 'admin'),
+(6, 'Alle', 'Alle', 'ganteng', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tambahevent`
+-- Struktur dari tabel `pesanan`
 --
 
-CREATE TABLE `tambahevent` (
+CREATE TABLE `pesanan` (
+  `idpesanan` int(30) NOT NULL,
   `id` int(30) NOT NULL,
-  `tanggal` varchar(30) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `jenisdurian` varchar(30) NOT NULL,
+  `alamat` varchar(30) NOT NULL,
+  `jumlah` int(30) NOT NULL,
+  `total` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `pesanan`
+--
+
+INSERT INTO `pesanan` (`idpesanan`, `id`, `nama`, `email`, `jenisdurian`, `alamat`, `jumlah`, `total`) VALUES
+(4, 3, 'arya', 'arya123@gmail.com', 'Durian Bawor', 'RT 03, RW 01 Desa Sedeng, Dusu', 3, 600000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tambahproduk`
+--
+
+CREATE TABLE `tambahproduk` (
+  `id` int(30) NOT NULL,
+  `stok` varchar(30) NOT NULL,
   `judul` varchar(30) NOT NULL,
-  `tempat` varchar(30) NOT NULL,
+  `deskripsi` varchar(50) NOT NULL,
   `harga` int(30) NOT NULL,
-  `gambar` varchar(30) NOT NULL
+  `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tambahevent`
+-- Dumping data untuk tabel `tambahproduk`
 --
 
-INSERT INTO `tambahevent` (`id`, `tanggal`, `judul`, `tempat`, `harga`, `gambar`) VALUES
-(1, '12-02-2024', 'Durian Musang King', 'Pacitan', 300000, 'musangking.jpg');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tiket`
---
-
-CREATE TABLE `tiket` (
-  `idtiket` int(30) NOT NULL,
-  `id` int(30) NOT NULL,
-  `nama` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `namakonser` int(11) NOT NULL,
-  `alamat` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `total` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `tambahproduk` (`id`, `stok`, `judul`, `deskripsi`, `harga`, `gambar`) VALUES
+(1, 'Stok 24', 'Durian Musang King', 'Sangat manis, lembut, dan agak pahit', 300000, 'musangking.jpg'),
+(2, 'Stok 39', 'Durian Bawor', 'Manisnya lite, lembut, dan dagingnya tebal', 250000, 'Durian-Bawor.png'),
+(4, 'Stok 59', 'Durian Super Tembaga', 'Daging tebal, manis, dan lembut', 150000, 'supertembaga.jpg'),
+(5, 'Stok 20', 'Durian Black Thorn', 'Super legit, pahitnya nampol, super enak', 400000, 'blackthornjpg.jpg'),
+(7, 'Stok 5', 'Durian Pelangi', 'Rasa yang eksotis dan durian yg langka', 75000, 'musangking.jpg');
 
 --
 -- Indexes for dumped tables
@@ -122,16 +135,16 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tambahevent`
+-- Indeks untuk tabel `pesanan`
 --
-ALTER TABLE `tambahevent`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`idpesanan`);
 
 --
--- Indeks untuk tabel `tiket`
+-- Indeks untuk tabel `tambahproduk`
 --
-ALTER TABLE `tiket`
-  ADD PRIMARY KEY (`idtiket`);
+ALTER TABLE `tambahproduk`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -141,25 +154,25 @@ ALTER TABLE `tiket`
 -- AUTO_INCREMENT untuk tabel `contactus`
 --
 ALTER TABLE `contactus`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tambahevent`
+-- AUTO_INCREMENT untuk tabel `pesanan`
 --
-ALTER TABLE `tambahevent`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `pesanan`
+  MODIFY `idpesanan` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tiket`
+-- AUTO_INCREMENT untuk tabel `tambahproduk`
 --
-ALTER TABLE `tiket`
-  MODIFY `idtiket` int(30) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tambahproduk`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
