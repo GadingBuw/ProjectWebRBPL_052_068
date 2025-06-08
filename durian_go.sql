@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Apr 2025 pada 15.14
+-- Waktu pembuatan: 08 Jun 2025 pada 17.13
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `contactus` (
 --
 
 INSERT INTO `contactus` (`id`, `nama`, `email`, `perihal`, `pesan`) VALUES
-(2, 'arya', 'aryaa@gmail.com', 'Pertanyaan seputar produk', 'Itu kok duriannya gak kaya durian?');
+(4, 'may', 'damai.gading.dg@gmail.com', 'Saran', 'Itu kok duriannya gak kaya durian?');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,13 @@ INSERT INTO `login` (`id`, `nama`, `username`, `password`, `level`) VALUES
 (3, 'arya', 'arya', 'ganteng', 'user'),
 (4, 'rapolo', 'rapolo', 'ganteng', 'admin'),
 (5, 'nova', 'nova', 'ganteng', 'admin'),
-(6, 'Alle', 'Alle', 'ganteng', 'admin');
+(6, 'Alle', 'Alle', 'ganteng', 'admin'),
+(7, 'rizal', 'dontol', 'pakem', 'user'),
+(8, 'rizal', 'dontol', 'pakem', 'user'),
+(9, 'iqbal', 'iqbalodon', 'ganteng', 'admin'),
+(10, 'iqbal', 'iqbalodon', 'ganteng', 'admin'),
+(11, 'iqbal', 'iqbalodon', 'ganteng', 'admin'),
+(12, 'damai', 'damai', 'ganteng', 'user');
 
 -- --------------------------------------------------------
 
@@ -81,6 +87,8 @@ CREATE TABLE `pesanan` (
   `email` varchar(30) NOT NULL,
   `jenisdurian` varchar(30) NOT NULL,
   `alamat` varchar(30) NOT NULL,
+  `metodePembayaran` varchar(50) NOT NULL,
+  `buktiPembayaran` varchar(50) NOT NULL,
   `jumlah` int(30) NOT NULL,
   `total` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -89,8 +97,9 @@ CREATE TABLE `pesanan` (
 -- Dumping data untuk tabel `pesanan`
 --
 
-INSERT INTO `pesanan` (`idpesanan`, `id`, `nama`, `email`, `jenisdurian`, `alamat`, `jumlah`, `total`) VALUES
-(4, 3, 'arya', 'arya123@gmail.com', 'Durian Bawor', 'RT 03, RW 01 Desa Sedeng, Dusu', 3, 600000);
+INSERT INTO `pesanan` (`idpesanan`, `id`, `nama`, `email`, `jenisdurian`, `alamat`, `metodePembayaran`, `buktiPembayaran`, `jumlah`, `total`) VALUES
+(29, 3, 'Andi', 'dian@gmail.com', 'Durian Black Thorn', 'Tulakan', 'cod', '', 3, 1200000),
+(30, 12, 'may', 'mayjd@gmail.com', 'Durian Super Tembaga', 'Pacitan Kota', 'dana', 'buktipembayaran.jpg', 1, 150000);
 
 -- --------------------------------------------------------
 
@@ -154,25 +163,25 @@ ALTER TABLE `tambahproduk`
 -- AUTO_INCREMENT untuk tabel `contactus`
 --
 ALTER TABLE `contactus`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `idpesanan` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idpesanan` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `tambahproduk`
 --
 ALTER TABLE `tambahproduk`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
