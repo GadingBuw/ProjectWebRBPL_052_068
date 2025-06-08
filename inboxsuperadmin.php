@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Inbox | DurianGo</title>
 </head>
 
@@ -38,7 +38,7 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesessionsuperadmin.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesessionsuperadmin.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="homesessionsuperadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,10 +57,8 @@
                 </div>
 
                 <div class="navbar-nav ml-auto" style="font-family: Poppins;font-size:14px;">
+                    <a href="tambahadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Admin </a>
                     <a href="inboxsuperadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
-
-                    <a href="tambahproduk.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Produk </a>
-
 
                     <span style="color:blueviolet;"> Welcome Super Admin,
 
@@ -90,7 +88,7 @@
         while ($data = mysqli_fetch_array($query)) {
             $angka = $angka + 1; ?>
 
-            <div class="editlihatproduk container" style="display: flex;">
+            <div class="editlihattiket container" style="display: flex;">
 
                 <div class="formleft container" style="padding-left: 20px;padding-top:10px;margin-right:10px; padding-right:0px;padding-bottom:20px;">
 

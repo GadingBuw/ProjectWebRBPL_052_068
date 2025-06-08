@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -16,18 +15,18 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
-    <title>Update Produk | DurianGo</title>
+    <link rel="shortcut icon" href="DurianGO.png">
+    <title>Konfirmasi Pesanan | DurianGo</title>
 </head>
 
 <body>
 
     <!-- <?php
-    session_start();
-    if (empty($_SESSION['username'])) {
-        header("location:login.php?pesan=belum_login");
-    }
-    ?> -->
+            session_start();
+            if (empty($_SESSION['username'])) {
+                header("location:login.php?pesan=belum_login");
+            }
+            ?> -->
 
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; padding: 0px;">
@@ -41,8 +40,8 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesessionsuperadmin.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
-            <a class="navbar-brand" href="homesessionsuperadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
+            <a class="navbar-brand" href="homesession.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesession.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,7 +49,7 @@
                 <div class="navbar-nav mr-auto">
                     <li class="nav-item" style="margin-left: 100px;">
 
-                    <form class="form-inline" action="searchproduksuperadmin.php" method="POST">
+                        <form class="form-inline" action="searchprodukuser.php" method="POST">
                             <input class="form-control mr-sm-0" type="text" name="search" placeholder="Cari Produk Disini" aria-label="Search" style="border-top-right-radius: 0px ; border-bottom-right-radius: 0px; margin-right: 0px; width: 450px;">
                             <button type="submit" style="border-top-right-radius: 7px; border-bottom-right-radius: 7px;
                     padding-top: 7px; padding-left: 10px; padding-right: 10px; padding-bottom: 7px; border:none; margin-left: 0px;display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" fill="gray" class="bi bi-search" viewBox="0 0 16 16">
@@ -60,12 +59,14 @@
                 </div>
 
                 <div class="navbar-nav ml-auto" style="font-family: Poppins;font-size:14px;">
-                <a href="inboxsuperadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
-
+                <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
+                    <a href="lihatpesananadmin.php" style="margin-right: 13px;margin-top:8px;text-decoration:none; color:white;">Lihat Pesanan </a>
                     <a href="tambahproduk.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Produk </a>
-                        
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg></a>
 
-                    <span style="color:blueviolet;"> Welcome Super Admin,
+
+                    <span style="color:blueviolet;"> Welcome,
 
                         <?php
                         echo $_SESSION['username'];
@@ -73,72 +74,51 @@
                         <a class="btn btn-danger" style="margin-left: 16px;" href="logout.php" role="button">Logout</a>
 
 
-                </span>
+                    </span>
 
 
+                </div>
             </div>
-    </div>
-    </nav>
+        </nav>
     </div>
 
 
     <?php
-include "konek.php";
+    include "konek.php";
+    $id = $_GET['id'];
+    $query = mysqli_query($konek, "DELETE FROM pesanan where idpesanan=$id");
+    if ($query) { ?>
 
-if (isset($_POST['upload'])){
-$id=$_POST['id'];
-$stok =$_POST['stok'];
-$judul =$_POST['judul'];
-$deskripsi =$_POST['deskripsi'];
-$harga =$_POST['harga'];
+        <section>
 
 
-$gambar =$_FILES['gambar']['name'];
-$path =$_FILES['gambar']['tmp_name'];
-$target='C:/xampp/htdocs/durian_go/'.basename($_FILES['gambar']['name']);
-move_uploaded_file($path,"$target");
+            <div class="editlihattiket container" style="Padding:180px;">
 
 
+                <h1>Pesanan telah terkonfirmasi</h1>
+                <p>Note : Segera kirimkan pesanan secepatnya!</p>
+                <br><br>
+                <a href="lihatpesananadmin.php" style="text-decoration:none;padding:9px; font-size:16px;margin-left: 0px;margin-right:10px; background-color: red ; border-style:none; font-family: Poppins; color:white;border-radius:10px;">Kembali</a>
 
-$query=mysqli_query($konek,"UPDATE tambahproduk SET stok='$stok', judul='$judul',deskripsi='$deskripsi',harga='$harga',gambar='$gambar' where id='$id'") or die(mysqli_error($konek));
-if($query)
-{?>
-
-    <section>
+            </div>
 
 
-        <div class="editlihatproduk container" style="Padding:180px;" >
-
-        <center>
-
-            
-            <h1>Produk Berhasil Di Update</h1>
-            <br><br>
-            <a href="homesessionsuperadmin.php" style="text-decoration:none;padding:9px; font-size:16px;margin-left: 0px;margin-right:10px; background-color: blueviolet ; border-style:none; font-family: Poppins; color:white;border-radius:10px;">Kembali ke Beranda</a>
-        </center>
-        
-        </div>
-        
-           
         <?php
-                }
-                else
-                {
-                echo "Proses Input gagal";
-                }
-            }
-                ?>        
+    } else {
+        echo "Proses Input gagal";
+    }
+        ?>
 
-        
-            
+
+
         </section>
-            
 
 
 
 
-    </div>
-    <div class="footer" id="aboutus" style="background-color: black; margin-left: 0px; margin-right: 0px; margin-top:100px; padding: 30px; display: flex; text-align: center;">
+
+        </div>
+        <div class="footer" id="aboutus" style="background-color: black; margin-left: 0px; margin-right: 0px; margin-top:100px; padding: 30px; display: flex; text-align: center;">
 
 
 
@@ -212,16 +192,16 @@ if($query)
 
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-    </script>
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+        </script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Keranjang | DurianGo</title>
 </head>
 
@@ -39,7 +39,7 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesession.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesession.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="homesession.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@
 
                 <h3>isi form buat pembelian durian</h3><br><br>
 
-                <form action="inputpesanan.php" method="POST">
+                <form action="inputpesanan.php" method="POST" enctype="multipart/form-data">
                     
                     <?php 
                 include "konek.php";
@@ -108,13 +108,13 @@
                             <td>
                                 <label style="margin-bottom: 20px;width:200px;" for="inputnama">Nama Lengkap</label>
                             </td>
-                            <td> <input type="text" class="form-control" id="inputnama" name="nama" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
+                            <td> <input type="text" class="form-control" id="inputnama" name="nama" style="margin-left: 10px;margin-bottom: 20px;width:500px;" required></td>
                         </tr>
                         <tr>
                             <td>
                                 <label style="margin-bottom: 20px;width:200px;" for="inputemail">Email</label>
                             </td>
-                            <td> <input type="email" class="form-control" id="inputemail" name="email" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
+                            <td> <input type="email" class="form-control" id="inputemail" name="email" style="margin-left: 10px;margin-bottom: 20px;width:500px;" required></td>
                         </tr>
                         <tr>
                             <td>
@@ -138,10 +138,27 @@
                             <td>
                                 <label style="margin-bottom: 20px;width:200px;" for="inputalamat">Alamat</label>
                             </td>
-                            <td> <input type="text" class="form-control" id="inputalamat" name="alamat" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
+                            <td> <input type="text" class="form-control" id="inputalamat" name="alamat" style="margin-left: 10px;margin-bottom: 20px;width:500px;" required></td>
                         </tr>
 
+                        <tr>
+                            <td><label style="margin-bottom: 20px;width:200px;" for="metodePembayaran">Metode Pembayaran</label></td>
+                            <td><select id="metodePembayaran" class="form-control" style="margin-left: 10px;margin-bottom: 20px;width:500px; " name="metodePembayaran" required>
+                                    <option value="">Pilih Metode Pembayaran</option>
+                                    <option value="gopay">GoPay</option>
+                                    <option value="ovo">OVO</option>
+                                    <option value="dana">DANA</option>
+                                    <option value="cod">COD</option>
+                                </select></td>    
+                        
+                        </tr>
 
+                        <tr>
+                            <td>
+                                <label style="margin-bottom: 20px;width:200px;" for="buktiPembayaran">Bukti Pembayaran</label>
+                            </td>
+                            <td> <input type="file" name="buktiPembayaran" class="form-control" id="buktiPembayaran" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
+                        </tr>
                         <tr>
                             <td></td>
                             <input type="hidden" value="<?php echo $id ?>" name="id">
@@ -160,11 +177,10 @@
 
                 <h5>Syarat & Ketentuan</h5>
                 <li>Pemesanan durian dapat dilakukan melalui situs web resmi atau dapat datang langsung ke toko yang sudah tertera di alamat.</li>
+                <li>Khusus untuk pembayaran menggunakan Metode Pembayaran "COD", para pelanggan tidak perlu mengisi bukti pembayaran. Karena untuk metode "COD" nanti akan ditangani langsung oleh admin</li>
                 <li>Pembayaran durian harus dilakukan dalam mata uang yang ditentukan dan sesuai dengan metode pembayaran yang diterima.</li>
                 <li>Konfirmasi pembelian durian akan dikirimkan ke alamat email yang sudah diisi di form.</li>
                 <li>Durian yang sudah dibeli tidak dapat dikembalikan kecuali ada durian yang memiliki kualitas dan kondisi yang kurang baik.</li>
-                <li>Pihak Pembeli bertanggung jawab untuk memeriksa durian setelah menerima konfirmasi pembelian.</li>
-                <li>Durian yang hilang atau rusak mungkin dapat digantikan tergantung dengan kebijakan yang ditetapkan.</li>
                 <li>Pihak Pembeli setuju untuk mengikuti aturan dan regulasi yang ditetapkan oleh Pihak DurianGo.</li>
 
             </div>

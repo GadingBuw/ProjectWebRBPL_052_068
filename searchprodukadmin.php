@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Search | DurianGo</title>
 </head>
 
@@ -39,7 +39,7 @@
 
     <div class="editnav" style="margin-bottom: 100px;">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesessionadmin.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesessionadmin.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="homesessionadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -58,10 +58,9 @@
                 </div>
 
                 <div class="navbar-nav ml-auto" style="font-family: Poppins;font-size:14px;">
-                    <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
-
-                    <a href="tambahproduk.php" style="margin-right: 13px;margin-top:8px;text-decoration:none; color:white;">Tambah Produk </a>
-                    <a href="keranjangsession.php"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="white" class="bi bi-cart4" style="margin-right: 20px;margin-top:5px;" viewBox="0 0 16 16">
+                <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
+                    <a href="lihatpesananadmin.php" style="margin-right: 13px;margin-top:8px;text-decoration:none; color:white;">Lihat Pesanan </a>
+                    <a href="tambahproduk.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Produk </a>
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                         </svg></a>
 

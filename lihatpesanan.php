@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Pesanan Kamu | DurianGo</title>
 </head>
 
@@ -40,7 +40,7 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesession.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesession.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="homesession.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -121,7 +121,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <label style="margin-top:10px;width:200px;" for="inputnama">Konser</label>
+                                <label style="margin-top:10px;width:200px;" for="inputnama">Jenis Durian</label>
                             </td>
                             <td>:</td>
                             <td> <span style="margin-left: 10px;margin-bottom: 20px;"> <?php echo $data['jenisdurian']; ?></span></td>
@@ -140,6 +140,23 @@
                             <td>:</td>
                             <td> <span style="margin-left: 10px;margin-bottom: 20px;"><?php echo $data['alamat']; ?> </span></td>
                         </tr>
+
+                        <tr>
+                            <td>
+                                <label style="margin-top:10px;width:200px;" for="inputnama">Metode Pembayaran</label>
+                            </td>
+                            <td>:</td>
+                            <td> <span style="margin-left: 10px;margin-bottom: 20px;"> <?php echo $data['metodePembayaran']; ?></span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label style="margin-top:10px;width:200px;" for="inputnama">Bukti Pembayaran</label>
+                            </td>
+                            <td>:</td>
+                            <td> <span style="margin-left: 10px;margin-bottom: 20px;"><img src="<?php echo $data['buktiPembayaran']; ?>" alt="" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); max-height: 200px;"> </span></td>
+                        </tr>
+
                         <tr>
                             <td>
                                 <label style="margin-top:10px;width:200px;" for="inputnama">Total Harga</label>

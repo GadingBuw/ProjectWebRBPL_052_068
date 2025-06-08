@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Update Produk | DurianGo</title>
 </head>
 
@@ -40,7 +40,7 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesessionadmin.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesessionadmin.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="homesessionadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,8 +59,8 @@
                 </div>
 
                 <div class="navbar-nav ml-auto" style="font-family: Poppins;font-size:14px;">
-                    <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
-
+                <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
+                    <a href="lihatpesananadmin.php" style="margin-right: 13px;margin-top:8px;text-decoration:none; color:white;">Lihat Pesanan </a>
                     <a href="tambahproduk.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Produk </a>
 
 

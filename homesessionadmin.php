@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,10 +11,10 @@
 
 
 
-    <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Home | DurianGo</title>
 </head>
 
@@ -39,8 +38,8 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href=""><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
-            <a class="navbar-brand" href="" style="color:white ; font-family:Poppins;">DurianGo</a>
+            <a class="navbar-brand" href=""><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesessionadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,7 +58,7 @@
 
                 <div class="navbar-nav ml-auto" style="font-family: Poppins;font-size:14px;">
                     <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
-
+                    <a href="lihatpesananadmin.php" style="margin-right: 13px;margin-top:8px;text-decoration:none; color:white;">Lihat Pesanan </a>
                     <a href="tambahproduk.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Produk </a>
 
 
@@ -210,7 +209,7 @@
 
             <a href="keranjangsession.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianmontong.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -225,7 +224,7 @@
             </a>
             <a href="keranjangsession.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianpelangi.jpeg" alt="">
                     <div style="display: flex;">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -241,7 +240,7 @@
 
             <a href="keranjangsession.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianfrozen.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -257,7 +256,7 @@
 
             <a href="keranjangsession.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianpack.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -273,7 +272,7 @@
 
             <a href="keranjangsession.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianpeturk.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -370,22 +369,10 @@
     </div>
 
 
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    -->
 </body>
 
 </html>

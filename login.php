@@ -21,7 +21,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
+    <link rel="shortcut icon" href="DurianGO.png">
 
     <title>LOGIN | DurianGo</title>
 </head>
@@ -29,7 +29,7 @@
 <body>
 
     <div class="logohome" style="margin-top: 20px; margin-bottom:100px;">
-        <center> <img src="durian.jpg" alt="" style="height: 40px; margin-right: 5px;">
+        <center> <img src="DurianGO.png" alt="" style="height: 40px; margin-right: 5px;">
             <a style="color: black; font-family: Abril Fatface">DurianGo</a>
         </center>
 
@@ -42,7 +42,7 @@
             <div class="imglogin" style="margin-left:200px; margin-right:0px; margin-top:70px;">
                 <center>
 
-                    <img src="https://ouch-cdn2.icons8.com/42Zf-oU2uUW9Ff_iO1dUG2lxKCjSsvrT-XZ-1mclx2Y/rs:fit:368:419/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjI0/Lzc0MWVkMWM4LWJj/MGQtNDM0ZC05ZmI1/LTc5NDFhYTVjNzRh/YS5wbmc.png" alt="" width="300px">
+                    <img src="logologin.png" alt="" width="300px">
 
                 </center>
 
@@ -84,7 +84,7 @@
                         <br>
                         <br>
 
-                        <button class="btn btn-warning " type="submit " style="background-color: rgb(214, 130, 242);border-color: rgb(26, 26, 26); width : 400px; height: 40px;border-radius: 8px; margin-bottom:10px; border-style:none;">LOGIN</button>
+                        <button class="btn btn-warning " type="submit " style="background-color: rgb(255, 233, 65);border-color: rgb(26, 26, 26); width : 400px; height: 40px;border-radius: 8px; margin-bottom:10px; border-style:none;">LOGIN</button>
                         <center>
 
                             <input style="margin-bottom: 30px;" type="checkbox" onclick="myFunction()">Tampilkan Password
@@ -108,7 +108,7 @@
 
                 </div>
 
-                <div style="margin-top:12px;margin-left:57px ;font-family:Poppins;font-size:13px;color:purple;">
+                <div style="margin-top:12px;margin-left:57px ;font-family:Poppins;font-size:13px;color:black;">
                     <center><a>Tidak punya akun? <a href='register.php'>Sign up</a></center><br>
                     <center><a>Kembali ke <a href='home.php'>Home?</a></center>
 

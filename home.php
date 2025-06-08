@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="Durian GO.png">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Home | DurianGo</title>
 </head>
 
@@ -32,7 +32,7 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href=""><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href=""><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                         </svg></a>
                     <a class="btn " href="register.php" role="button" style="font-size:16px; border-color: white; font-family: Poppins; color:white;border-radius:10px;">Daftar</a>
-                    <a class="btn" href="login.php" role="button" style=" font-size:16px;margin-left: 10px; background-color: blueviolet ; border-style:none; color: black; font-family: Poppins; color:white;border-radius:10px;">Masuk</a>
+                    <a class="btn" href="login.php" role="button" style=" font-size:16px;margin-left: 10px; background-color:yellow ; border-style:none; color: black; font-family: Poppins; color:black;border-radius:10px;">Masuk</a>
 
 
                 </div>
@@ -193,7 +193,7 @@
 
             <a href="keranjang.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianmontong.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -208,7 +208,7 @@
             </a>
             <a href="keranjang.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianpelangi.jpeg" alt="">
                     <div style="display: flex;">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -224,7 +224,7 @@
 
             <a href="keranjang.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianfrozen.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -240,7 +240,7 @@
 
             <a href="keranjang.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianpack.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -256,7 +256,7 @@
 
             <a href="keranjang.php" style="text-decoration:none; color: rgba(62, 2, 62, 0.975);">
                 <div class="media-element">
-                    <img src="https://img.freepik.com/premium-photo/durian-fruit-visual-photo-album-full-ripe-delicious-moments-durian-lovers_563241-25057.jpg" alt="">
+                    <img src="durianpeturk.jpeg" alt="">
                     <div style="display: flex; ">
                         <div class="editdate" style="color:blueviolet ;">
                             <center>Stok<br>
@@ -355,20 +355,11 @@
 
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    -->
 </body>
 
 </html>

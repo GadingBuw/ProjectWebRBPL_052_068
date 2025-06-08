@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/2048px-MBTA.svg.png">
+    <link rel="shortcut icon" href="DurianGO.png">
     <title>Contact Us | DurianGo</title>
 </head>
 
@@ -42,7 +42,7 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesession.php"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MBTA.svg/2048px-MBTA.svg.png" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesession.php"><img src="DurianGo.png" alt="" style="height: 40px; margin-right: 1px;"></a>
             <a class="navbar-brand" href="homesession.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

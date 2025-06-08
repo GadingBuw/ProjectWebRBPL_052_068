@@ -10,16 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-
-
     <link rel="stylesheet" href="style.css"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="durian.jpg">
-    <title>Update Produk | DurianGo</title>
+    <link rel="shortcut icon" href="DurianGO.png">
+    <title>Pesanan Pelanggan | DurianGo</title>
 </head>
 
 <body>
+
     <?php
     session_start();
     if (empty($_SESSION['username'])) {
@@ -38,8 +37,8 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="homesessionsuperadmin.php"><img src="durian.jpg" alt="" style="height: 40px; margin-right: 1px;"></a>
-            <a class="navbar-brand" href="homesessionsuperadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
+            <a class="navbar-brand" href="homesessionadmin.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="homesessionadmin.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,7 +46,7 @@
                 <div class="navbar-nav mr-auto">
                     <li class="nav-item" style="margin-left: 100px;">
 
-                    <form class="form-inline" action="searchproduksuperadmin.php" method="POST">
+                        <form class="form-inline" action="searchprodukuser.php" method="POST">
                             <input class="form-control mr-sm-0" type="text" name="search" placeholder="Cari Produk Disini" aria-label="Search" style="border-top-right-radius: 0px ; border-bottom-right-radius: 0px; margin-right: 0px; width: 450px;">
                             <button type="submit" style="border-top-right-radius: 7px; border-bottom-right-radius: 7px;
                     padding-top: 7px; padding-left: 10px; padding-right: 10px; padding-bottom: 7px; border:none; margin-left: 0px;display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" fill="gray" class="bi bi-search" viewBox="0 0 16 16">
@@ -57,112 +56,125 @@
                 </div>
 
                 <div class="navbar-nav ml-auto" style="font-family: Poppins;font-size:14px;">
-                <a href="inboxsuperadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
-
+                <a href="inboxadmin.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Inbox </a>
+                    <a href="lihatpesananadmin.php" style="margin-right: 13px;margin-top:8px;text-decoration:none; color:white;">Lihat Pesanan </a>
                     <a href="tambahproduk.php" style="margin-right: 13px;margin-top:7px;text-decoration:none; color:white;">Tambah Produk </a>
-                        
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg></a>
 
-                    <span style="color:blueviolet;"> Welcome Super Admin,
-
-                        <?php
-                        echo $_SESSION['username'];
-                        ?>
+                        <span style="color:blueviolet;"> Welcome Admin,
+                        <?php echo $_SESSION['username']; ?>
                         <a class="btn btn-danger" style="margin-left: 16px;" href="logout.php" role="button">Logout</a>
+                    </span>
 
-
-                </span>
-
-
-            </div>
+                </div>
             </div>
         </nav>
     </div>
+
     <section>
+        <?php
+        $angka = 0;
+        include "konek.php";
+        
+        // PERBAIKAN: Admin melihat SEMUA pesanan, bukan hanya pesanan berdasarkan ID admin
+        // Query untuk mengambil semua pesanan dari semua pelanggan
+        $query = mysqli_query($konek, "SELECT * FROM pesanan ORDER BY idpesanan DESC");
+        
+        // Cek apakah ada pesanan
+        if (mysqli_num_rows($query) == 0) {
+            echo "<div class='container' style='text-align: center; margin-top: 50px;'>";
+            echo "<h3>Belum ada pesanan dari pelanggan</h3>";
+            echo "</div>";
+        } else {
+            while ($data = mysqli_fetch_array($query)) {
+                $angka = $angka + 1; ?>
 
-    <?php
-include 'konek.php';
-$id=$_GET['id'];
-$query=mysqli_query($konek,"SELECT * from tambahproduk where id=$id");
-$data =mysqli_fetch_array($query);
-?>
+                <div class="editlihattiket container" style="display: flex; margin-bottom: 30px;">
+                    <div class="formleft container" style="padding-left: 20px;padding-top:10px;margin-right:10px; padding-right:0px;padding-bottom:20px; border: 1px solid #ddd; border-radius: 10px;">
 
-        <div class="editform container" style="display: flex;">
+                        <h2>Pesanan <span style="margin-left: 5px; color:blueviolet;"> <?php echo $angka; ?></span> </h2>
 
-            <div class="formleft container" style="padding-left: 20px;padding-top:10px;margin-right:10px; padding-right:10px;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">ID Pesanan</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"> <?php echo $data['idpesanan']; ?></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Nama Lengkap</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"> <?php echo $data['nama']; ?></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Email</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"><?php echo $data['email']; ?></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Jenis Durian</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"> <?php echo $data['jenisdurian']; ?></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Jumlah Durian</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"><?php echo $data['jumlah']; ?> </span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Alamat</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"><?php echo $data['alamat']; ?> </span></td>
+                            </tr>
 
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Metode Pembayaran</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"> <?php echo $data['metodePembayaran']; ?></span></td>
+                            </tr>
 
-                <h3>Selamat datang Admin, mau Update produk yaa</h3><br><br>
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Bukti Pembayaran</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;"><img src="<?php echo $data['buktiPembayaran']; ?>" alt="" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); max-height: 200px;"> </span></td>
+                            </tr>
 
-                <form method="POST" action="updateprodukquerysuperadmin.php" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                            <tr>
+                                <td>
+                                    <label style="margin-top:10px;width:200px;" for="inputnama">Total Harga</label>
+                                </td>
+                                <td>:</td>
+                                <td> <span style="margin-left: 10px;margin-bottom: 20px;">Rp. <?php echo number_format($data['total'], 0, ',', '.'); ?> </span></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <a href="konfirmasipesanan.php?id=<?php echo $data['idpesanan']; ?>" 
+                           style="text-decoration:none;padding:9px; font-size:16px;margin-left: 0px; background-color: green ; border-style:none; font-family: Poppins; color:white;border-radius:10px;"
+                           onclick="return confirm('Apakah Anda yakin ingin mengkonfirmasi pesanan ini?')">Konfirmasi Pesanan</a>
+                    </div>
+                </div>
 
-
-                    <table>
-                        <tr>
-                            <td>
-                                <label style="margin-bottom: 20px;width:200px;" for="Stok">Stok Produk</label>
-                            </td>
-                            <td><input type="text" name="stok" class="form-control" value="<?php echo $data['stok']; ?>" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label style="margin-bottom: 20px;width:200px;" for="judul">Judul Produk</label>
-                            </td>
-                            <td> <input type="text" name="judul" class="form-control" value="<?php echo $data['judul']; ?>" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label style="margin-bottom: 20px;width:200px;" for="deskripsi">Deskripsi </label>
-                            </td>
-                            <td> <input type="text" name="deskripsi"  class="form-control " value="<?php echo $data['deskripsi']; ?>"  style="margin-left: 10px;margin-bottom: 20px;width:500px; ">
-                                   </td>
-                        </tr>
-                        <tr>
-                            <td><label style="margin-bottom: 20px;width:200px;" for="inputjumlah">Harga</label></td>
-                            <td><input type="text" name="harga" class="form-control" value="<?php echo $data['harga']; ?>" style="margin-left: 10px;margin-bottom: 20px;width:500px;" id="harga"></td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <label style="margin-bottom: 20px;width:200px;" for="inputgambar">Foto Produk</label>
-                            </td>
-                            <td> <input type="file" name="gambar" class="form-control" id="gambar" value="<?php echo $data['gambar']; ?>" style="margin-left: 10px;margin-bottom: 20px;width:500px;"></td>
-                        </tr>
-
-                    
-                            <td></td>
-                            <td><button  type="submit" role="button" name="upload" style="padding:9px; font-size:16px;margin-left: 10px; background-color: blueviolet ; border-style:none; color: black; font-family: Poppins; color:white;border-radius:10px;">Update Produk</button></td>
-                        </tr>
-
-                    </table>
-
-
-
-                </form>
-
-            </div>
-
-            <div class="formright" style=" background-image:url('https://media.istockphoto.com/id/1473212544/id/vektor/latar-belakang-gradien-lembut.jpg?s=612x612&w=0&k=20&c=DsBfl7xY_ltzns-XYLLEZRJFDmRTrIkU2pdVsUTnmAU=') ;margin-left: 50px;font-family:Poppins; font-size:13px; padding:8px;">
-
-                <h5>Syarat & Ketentuan</h5>
-                <li>Pemesanan tiket dapat dilakukan melalui situs web resmi atau platform penjualan tiket yang terkait.</li>
-                <li>Pembayaran tiket harus dilakukan dalam mata uang yang ditentukan dan sesuai dengan metode pembayaran yang diterima.</li>
-                <li>Konfirmasi pembelian tiket akan dikirimkan ke alamat email yang sudah diisi di form.</li>
-                <li>Tiket yang sudah dibeli tidak dapat dikembalikan kecuali ada pembatalan atau perubahan jadwal dari Pihak Penyelenggara Konser.</li>
-                <li>Pihak Pembeli bertanggung jawab untuk memeriksa tiket setelah menerima konfirmasi pembelian.</li>
-                <li>Pihak Pembeli bertanggung jawab untuk menjaga keamanan tiket mereka.</li>
-                <li>Tiket yang hilang atau rusak mungkin dapat digantikan tergantung dengan kebijakan yang ditetapkan oleh Pihak Penyelenggara Konser.</li>
-                <li>Pihak Pembeli setuju untuk mengikuti aturan dan regulasi yang ditetapkan oleh Pihak Penyelenggara Konser selama acara berlangsung.</li>
-
-            </div>
-        </div>
-
+        <?php } 
+        } ?>
     </section>
 
-
     <div class="footer" id="aboutus" style="background-color: black; margin-left: 0px; margin-right: 0px; margin-top:100px; padding: 30px; display: flex; text-align: center;">
-
-
 
         <table class="table table-borderless responsive-2" style="color: white; font-size: 10px; text-align: left; margin-left: 300px; margin-right: 300px; overflow-x:auto;">
             <thead>
@@ -188,21 +200,16 @@ $data =mysqli_fetch_array($query);
                         <ul class="list-group">
                             <li class="list-group">Dana</li>
                             <li class="list-group">Gopay</li>
-
-
                         </ul>
-
                     </td>
                     <td>
                         <ul class="list-group">
                             <li class="list-group">Jl. Iskandar Dinata, Ngampel, Ploso, Kec. Pacitan, Kabupaten Pacitan, Jawa Timur 63515</li>
-
                         </ul>
                     </td>
                     <td>
                         <ul class="list-group">
                             <li class="list-group" style="margin-bottom: 10px; width: 100px;">
-
                                 <a href="https://id-id.facebook.com/login/device-based/regular/login/?login_attempt=1"><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="white" class="bi bi-facebook" viewBox="0 0 16 16" style="margin-left: 10px;margin-bottom: 10px;margin-top:0px;">
                                         <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
                                     </svg></a>
@@ -213,40 +220,23 @@ $data =mysqli_fetch_array($query);
                             <li class="list-group" style="margin-bottom: 10px;"> <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiaWQifQ%3D%3D%22%7D"><svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="white" class="bi bi-twitter" viewBox="0 0 16 16" style="margin-left: 10px;margin-bottom: 10px;margin-top:0px;">
                                         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                                     </svg></a> </li>
-
-
                         </ul>
                     </td>
-
             </tbody>
         </table>
-
-
     </div>
 
     <div class="editmidmedia" style="background-color: rgb(40, 40, 40); padding: 9px; color: white; font-size: 9px; font-family: Poppins;">
-
-
         <center>&copy;DurianGo</center>
-
     </div>
 
-
-
     <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    -->
 </body>
 
 </html>
