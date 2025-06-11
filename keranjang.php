@@ -32,8 +32,8 @@
 
     <div class="editnav">
         <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="home.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
-            <a class="navbar-brand" href="home.php" style="color:white ; font-family:Poppins;">DurianGo</a>
+            <a class="navbar-brand" href="index.php"><img src="DurianGO.png" alt="" style="height: 40px; margin-right: 1px;"></a>
+            <a class="navbar-brand" href="index.php" style="color:white ; font-family:Poppins;">DurianGo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

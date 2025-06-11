@@ -110,7 +110,7 @@
 
                 <div style="margin-top:12px;margin-left:57px ;font-family:Poppins;font-size:13px;color:black;">
                     <center><a>Tidak punya akun? <a href='register.php'>Sign up</a></center><br>
-                    <center><a>Kembali ke <a href='home.php'>Home?</a></center>
+                    <center><a>Kembali ke <a href='index.php'>Home?</a></center>
 
                 </div>
             </div>
